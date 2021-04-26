@@ -6,6 +6,8 @@ This is a escolang for the Decade Jam. The purpose of this language is to be fun
 ## How can I participate?
 Simply open up an issue for what you would like added to the langauge. State whether it's a standard library or a core langauge (core langauge being you don't need to import/include it to use it) feature and describe what it should do. After you've opened up an issue then you can make a pull request. 
 
+All language descriptions must begin with DECADE-- and then describe the feature.
+
 ## Implementation
 The following are links to implementations:
 
