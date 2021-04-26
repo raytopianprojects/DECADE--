@@ -3,6 +3,7 @@
 
 - variable declarations begin with the keyword DECADE
 - function declarations begin with the keyword JAM
+- random function should begin with !roll
 
 # technical details
 
