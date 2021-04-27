@@ -10,6 +10,7 @@
 
 - arrays are of dynamic length and should be implemented using lists
 - imports are handled the same way as in c - just copying the content of the files. Function prototypes are made automatically.
+- interpreter/complier should check to see if the Decade Jam is over or not and if it is have it fail to compile/interpret
 
 
 # Standard Library
