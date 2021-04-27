@@ -10,3 +10,8 @@
 
 - arrays are of dynamic length and should be implemented using lists
 - imports are handled the same way as in c - just copying the content of the files. Function prototypes are made automatically.
+
+
+# Standard Library
+- some sort of GUI library
+- networking library
