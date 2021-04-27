@@ -4,7 +4,7 @@
 - variable declarations begin with the keyword DECADE
 - function declarations begin with the keyword JAM
 - random function should begin with !roll followed by d(any number of dice) example !roll d1 will roll a 1
-- built in functions should being with the ! symbol
+- built in functions should begin with the ! symbol
 
 # technical details
 
