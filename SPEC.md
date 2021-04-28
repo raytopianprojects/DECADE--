@@ -1,6 +1,11 @@
 # syntax
 
 - variable declarations begin with the keyword DECADE
+- - variables are statically typed
+- - integer types are KEANE1 (8-byte int), KEANE2 (16-byte int), KEANE4 (32-byte int), KEANE8 (64-byte int). Replace N with U for unsigned
+- - float types are DECA4 (32-bit float) and DECA8 (64-bit double)
+- - structs are type RAVIS and their value is a function pointer
+- - - accessing struct members uses keyword RAVIS
 - function declarations begin with the keyword JAM
 - built in functions should begin with the ! symbol
 - all statements are enclosed in `[]` similarly to lisp
