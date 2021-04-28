@@ -11,6 +11,7 @@
 - all statements are enclosed in `[]` similarly to lisp
 - polish notation is used
 - everything is done as a function call. Making a variable, getting a list field etc.
+- ^ to square numbers
 
 # technical details
 
