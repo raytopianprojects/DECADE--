@@ -21,6 +21,8 @@
 - [JAMUNTIL [DECADE name type value] [JAMLENGTH 0 x]] is for loop
 - [GAINTIME value1 value2 store] is addition
 - [LOSETIME value1 value2 store] is subtraction
+- [CRUNCHTIME value1 value2 store] is power
+- [LAZYTIME value1 value2 store] is root
 - [OPATTR value1 value2 store] is XOR
 - [SIMATTR value1 value2 store] is AND
 - [BUILDUP value1 value2 store] is OR
