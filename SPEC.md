@@ -34,6 +34,7 @@
 - [JAMOVER value1 value2] is equal to
 - [JAMRUNNING value1 value2] is less than
 - [NOJAM value] is not
+- [BORROW code] imports code, if it's not code, segfault
 - builtin functions are [!print text], [!timeleft]
 - 
 
@@ -45,6 +46,7 @@
 - variables are stored on the DECADE-- stack, which is on the heap
 - the DECADE-- stack is of undefined size
 - The file extension for text files is \*.dcj, although it isn't enforced
+- No errors, only segfaults and undefined behavior
 
 
 # Standard Library
