@@ -44,6 +44,7 @@
 - interpreter/complier should check to see if the Decade Jam is over or not and if it is have it fail to compile/interpret
 - variables are stored on the DECADE-- stack, which is on the heap
 - the DECADE-- stack is of undefined size
+- The file extension for text files is \*.dcj, although it isn't enforced
 
 
 # Standard Library
