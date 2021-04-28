@@ -19,22 +19,22 @@
 - [MOKKA value] is return
 - [DECADE name RAVIS funcptr] is struct
 - [JAMUNTIL [DECADE name type value] [JAMLENGTH 0 x]] is for loop
-- [GAINTIME value1 value2 store] is addition
-- [LOSETIME value1 value2 store] is subtraction
-- [CRUNCHTIME value1 value2 store] is power
-- [LAZYTIME value1 value2 store] is root
-- [OPATTR value1 value2 store] is XOR
-- [SIMATTR value1 value2 store] is AND
-- [BUILDUP value1 value2 store] is OR
+- [GAINTIME value1 value2] is addition
+- [LOSETIME value1 value2] is subtraction
+- [CRUNCHTIME value1 value2] is power
+- [LAZYTIME value1 value2] is root
+- [OPATTR value1 value2] is XOR
+- [SIMATTR value1 value2] is AND
+- [BUILDUP value1 value2] is OR
 - [KEEPJAMMING condition] is while loop
-- [PUBGAME address value] is set memory
-- [PLAYGAME address value] is get memory
+- [PUBGAME variable value] is set value
+- [PLAYGAME variable] is get value
 - [FINISHED condition] is if statement, skip next instruction if not condition
 - [VOTEOVER value1 value2] is greater than
 - [JAMOVER value1 value2] is equal to
 - [JAMRUNNING value1 value2] is less than
 - [NOJAM value] is not
-- builtin functions are [!print text]
+- builtin functions are [!print text], [!timeleft]
 - 
 
 # technical details
