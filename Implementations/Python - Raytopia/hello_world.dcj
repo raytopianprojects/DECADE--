@@ -1,0 +1,5 @@
+[DECADE hello]
+[DECADE hello1]
+[DECADE hello2-2]
+[hello "Hello There"]
+[!print hello]
