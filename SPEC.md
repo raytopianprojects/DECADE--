@@ -13,6 +13,7 @@
 - all statements are enclosed in `[]` similarly to lisp
 - polish notation is used
 - everything is done as a function call. Making a variable, getting a list field etc.
+- Comments are { text enclosed in curly brackets } and are multiline
 
 - [DECADE \`name\` type value] is variable
 - [JAM name [ params ] [ body ] type] is function
