@@ -11,6 +11,6 @@ typedef struct {
 	char token;
 } token_t;
 
-token_t* tokenizeFile(char* file, char* contents, uint64_t* numTokens, uint64_t* flen);
+token_t* tokenizeFile(char* file, char** contentsPTR, uint64_t* numTokens, uint64_t* flen);
 
 #endif

@@ -14,6 +14,10 @@ int main(int argc, char **argv) {
 	char* fileContents = (char* )(main);
 	uint64_t numTokens;
 	uint64_t flen;
-	tokenizeFile(argv[argc-1], fileContents, &numTokens, &flen);
+	token_t* tokens = tokenizeFile(argv[argc-1], &fileContents, &numTokens, &flen);
+	printf("\n\n");
+	for (uint64_t i = 0; i < numTokens; i++) {
+		printf("TOKEN: %c, LOCATION: %llu, REAL: %c\n", tokens[i].token, tokens[i].location, fileContents[tokens[i].location]);
+	}
 	return 0;
 }
