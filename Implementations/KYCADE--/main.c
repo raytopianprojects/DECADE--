@@ -8,7 +8,8 @@ int main(int argc, char **argv) {
 		return 759841101;
 	}
 	if (argc < 2) {
-		printf("USAGE: KYCADE--.exe path/to/file.dcj");
+		printf("USAGE: KYCADE--.exe path/to/file.dcj\n");
+		return 1;
 	}
 	char* fileContents;
 	uint64_t numTokens;
