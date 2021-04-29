@@ -1,0 +1,9 @@
+-IC:\mingw64\x86_64\mingw64\lib\gcc\x86_64-w64-mingw32\8.1.0\include\c++
+-IC:\mingw64\x86_64\mingw64\lib\gcc\x86_64-w64-mingw32\8.1.0\include\c++\x86_64-w64-mingw32
+-IC:\mingw64\x86_64\mingw64\lib\gcc\x86_64-w64-mingw32\8.1.0\include\c++\backward
+-IC:\mingw64\x86_64\mingw64\lib\gcc\x86_64-w64-mingw32\8.1.0\include
+-IC:\mingw64\x86_64\mingw64\lib\gcc\x86_64-w64-mingw32\8.1.0\include-fixed
+-IC:\mingw64\x86_64\mingw64\x86_64-w64-mingw32\include
+-IC:\CodeLite\KYCADE--
+-target
+x86_64-pc-windows-gnu
