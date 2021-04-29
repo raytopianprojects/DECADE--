@@ -2,6 +2,7 @@
 
 token_t* tokenizeFile(char* file, char* contents, uint64_t* numTokens, uint64_t* flen) {
 	FILE* dcj = fopen(file, "r");
+	if (dcj == NULL) return NULL;
 	fseek(dcj, 0L, SEEK_END);
 	*flen = ftell(dcj);
 	fseek(dcj, 0L, SEEK_SET);
