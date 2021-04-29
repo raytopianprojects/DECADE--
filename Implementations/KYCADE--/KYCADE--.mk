@@ -14,7 +14,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=xande
-Date                   :=28/04/2021
+Date                   :=29/04/2021
 CodeLitePath           :="C:/Program Files/CodeLite"
 LinkerName             :=C:/mingw64/x86_64/mingw64/bin/g++.exe
 SharedObjectLinkerName :=C:/mingw64/x86_64/mingw64/bin/g++.exe -shared -fPIC
@@ -62,7 +62,7 @@ AS       := C:/mingw64/x86_64/mingw64/bin/as.exe
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=../build-$(ConfigurationName)/KYCADE--/main.c$(ObjectSuffix) 
+Objects0=../build-$(ConfigurationName)/KYCADE--/parser.c$(ObjectSuffix) ../build-$(ConfigurationName)/KYCADE--/main.c$(ObjectSuffix) ../build-$(ConfigurationName)/KYCADE--/vm.c$(ObjectSuffix) 
 
 
 
@@ -93,6 +93,14 @@ PreBuild:
 ##
 ## Objects
 ##
+../build-$(ConfigurationName)/KYCADE--/parser.c$(ObjectSuffix): parser.c ../build-$(ConfigurationName)/KYCADE--/parser.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "C:/CodeLite/KYCADE--/parser.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/parser.c$(ObjectSuffix) $(IncludePath)
+../build-$(ConfigurationName)/KYCADE--/parser.c$(DependSuffix): parser.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/KYCADE--/parser.c$(ObjectSuffix) -MF../build-$(ConfigurationName)/KYCADE--/parser.c$(DependSuffix) -MM parser.c
+
+../build-$(ConfigurationName)/KYCADE--/parser.c$(PreprocessSuffix): parser.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/KYCADE--/parser.c$(PreprocessSuffix) parser.c
+
 ../build-$(ConfigurationName)/KYCADE--/main.c$(ObjectSuffix): main.c ../build-$(ConfigurationName)/KYCADE--/main.c$(DependSuffix)
 	$(CC) $(SourceSwitch) "C:/CodeLite/KYCADE--/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
 ../build-$(ConfigurationName)/KYCADE--/main.c$(DependSuffix): main.c
@@ -100,6 +108,14 @@ PreBuild:
 
 ../build-$(ConfigurationName)/KYCADE--/main.c$(PreprocessSuffix): main.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/KYCADE--/main.c$(PreprocessSuffix) main.c
+
+../build-$(ConfigurationName)/KYCADE--/vm.c$(ObjectSuffix): vm.c ../build-$(ConfigurationName)/KYCADE--/vm.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "C:/CodeLite/KYCADE--/vm.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/vm.c$(ObjectSuffix) $(IncludePath)
+../build-$(ConfigurationName)/KYCADE--/vm.c$(DependSuffix): vm.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/KYCADE--/vm.c$(ObjectSuffix) -MF../build-$(ConfigurationName)/KYCADE--/vm.c$(DependSuffix) -MM vm.c
+
+../build-$(ConfigurationName)/KYCADE--/vm.c$(PreprocessSuffix): vm.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/KYCADE--/vm.c$(PreprocessSuffix) vm.c
 
 
 -include ../build-$(ConfigurationName)/KYCADE--//*$(DependSuffix)

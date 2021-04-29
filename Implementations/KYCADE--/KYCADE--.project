@@ -93,10 +93,10 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <File Name="parser.c"/>
+    <File Name="parser.h"/>
     <File Name="vm.c"/>
     <File Name="vm.h"/>
-    <File Name="tokenizer.c"/>
-    <File Name="tokenizer.h"/>
     <File Name="main.c"/>
   </VirtualDirectory>
 </CodeLite_Project>
