@@ -14,7 +14,7 @@ func (tok *token) prettyPrint() {
 
 func main() {
 	l := lexer{
-		"[JAM main [] [[!print \"hello world\"]] NOBOT]",
+		"{first line}\n{comment}[JAM main [] [[!print \"hello world\"]] NOBOT]",
 		0,
 	}
 

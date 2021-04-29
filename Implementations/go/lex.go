@@ -32,9 +32,9 @@ func (l *lexer) peek() byte {
 }
 
 // returns strings starting at cursor
-func (l *lexer) peekStr() string {
+func (l *lexer) peekCustom(ender byte) string {
 	tr := ""
-	for l.cursor < len(l.inp) && l.inp[l.cursor] != '"' {
+	for l.cursor < len(l.inp) && l.inp[l.cursor] != ender {
 		tr += string(l.inp[l.cursor])
 		l.cursor++
 	}
@@ -68,13 +68,19 @@ func (l *lexer) lex() []token {
 			tr = append(tr, token{lineno, charno, tokClose, "]"})
 		case '"':
 			old := l.cursor
-			tr = append(tr, token{lineno, old, tokNormal, l.peekStr()})
+			tr = append(tr, token{lineno, charno, tokNormal, l.peekCustom('"')})
+			charno += l.cursor - old
+		case '{':
+			old := l.cursor
+			l.peekCustom('}')
+			charno += l.cursor - old
 		case '\n':
 			charno = -1
 			lineno++
 		default:
 			old := l.cursor
-			tr = append(tr, token{lineno, old, tokNormal, l.peekTok()})
+			tr = append(tr, token{lineno, charno, tokNormal, l.peekTok()})
+			charno += l.cursor - old
 		}
 		charno++
 	}
