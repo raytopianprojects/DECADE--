@@ -49,25 +49,28 @@ func getfuncs(inp []expr) map[string]fn {
 				continue
 			}
 
-			if e.children[1].(*atom) == nil {
+			if _, ok := e.children[1].(*atom); !ok {
 				jamKw := e.children[0].(*atom)
 				parseError(fmt.Sprintf("invalid function declaration on (%d, %d)", jamKw.lineno, jamKw.charno+len(jamKw.data)))
 				return nil
 			}
 
-			if e.children[2].(*expression) == nil {
+			if _, ok := e.children[2].(*expression); !ok {
 				l, c := e.children[2].getpos()
 				parseError(fmt.Sprintf("invalid function declaration on (%d, %d)", l, c))
+				return nil
 			}
 
-			if e.children[3].(*expression) == nil {
+			if _, ok := e.children[3].(*expression); !ok {
 				l, c := e.children[3].getpos()
 				parseError(fmt.Sprintf("invalid function declaration on (%d, %d)", l, c))
+				return nil
 			}
 
-			if e.children[4].(*atom) == nil {
+			if _, ok := e.children[4].(*atom); !ok {
 				l, c := e.children[4].getpos()
 				parseError(fmt.Sprintf("invalid function declaration on (%d, %d)", l, c))
+				return nil
 			}
 
 			tr[e.children[1].(*atom).data] = fn{len(e.children[2].(*expression).children), e.children[3].(*expression).children}

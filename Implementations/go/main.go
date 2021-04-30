@@ -49,6 +49,9 @@ func main() {
 
 	res := p.parse()
 	exprPrint(&res, "")
-	fmt.Println(getfuncs(res.children))
-	exprPrint(getfuncs(res.children)["main"].body[0], "")
+	funcs := getfuncs(res.children)
+	if len(funcs) > 0 {
+		fmt.Println(funcs)
+		exprPrint(funcs["main"].body[0], "")
+	}
 }
