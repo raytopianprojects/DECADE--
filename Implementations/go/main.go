@@ -4,6 +4,10 @@ import (
 	"fmt"
 )
 
+func parseError(inp string) {
+	fmt.Printf("\033[31merror\033[0m: %s\n", inp)
+}
+
 func (tok *token) prettyPrint() {
 	types := []string{"NULL TOKEN", "KEYWORD", "OPENER", "CLOSER", "STRING", "INT"}
 
@@ -27,7 +31,7 @@ func exprPrint(e expr, off string) {
 
 func main() {
 	l := lexer{
-		"{first line}\n{comment}[JAM main [] [[!print \"hello world\"]] NOBOT]",
+		"[[JAM somefunc [arg1, arg2] [] NOBOT][JAM main [] [[!print \"hello world\"]] NOBOT]]",
 		0,
 	}
 
@@ -45,4 +49,6 @@ func main() {
 
 	res := p.parse()
 	exprPrint(&res, "")
+	fmt.Println(getfuncs(res.children))
+	exprPrint(getfuncs(res.children)["main"].body[0], "")
 }
