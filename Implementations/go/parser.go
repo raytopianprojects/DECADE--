@@ -73,7 +73,7 @@ func getfuncs(inp []expr) map[string]fn {
 				return nil
 			}
 
-			tr[e.children[1].(*atom).data] = fn{len(e.children[2].(*expression).children), e.children[3].(*expression).children}
+			tr[e.children[1].(*atom).data] = fn{len(e.children[2].(*expression).children), e.children[3].(*expression)}
 		}
 	}
 	return tr

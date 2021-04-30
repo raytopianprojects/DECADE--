@@ -52,6 +52,6 @@ func main() {
 	funcs := getfuncs(res.children)
 	if len(funcs) > 0 {
 		fmt.Println(funcs)
-		exprPrint(funcs["main"].body[0], "")
+		exprPrint(funcs["main"].body, "")
 	}
 }

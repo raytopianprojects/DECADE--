@@ -2,7 +2,7 @@ package main
 
 type fn struct {
 	argc int
-	body []expr
+	body *expression
 }
 
 type atom struct {
