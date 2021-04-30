@@ -2,6 +2,7 @@ package main
 
 import (
 	"strings"
+	"strconv"
 )
 
 // basic lexer type
@@ -19,9 +20,11 @@ type token struct {
 
 const (
 	tokNull = 0 // error. currently unused
-	tokNormal = 1 // normal token. keywords, strings, numbers etc.
+	tokKeyword = 1 // keywords, function names and variables
 	tokOpen = 2 // [
 	tokClose = 3 // ]
+	tokString = 4 // string
+	tokNumber = 5 // numbers. Right now only ints TODO
 	tokEnders = " []\n" // characters, that terminate token
 )
 
@@ -68,7 +71,7 @@ func (l *lexer) lex() []token {
 			tr = append(tr, token{lineno, charno, tokClose, "]"})
 		case '"':
 			old := l.cursor
-			tr = append(tr, token{lineno, charno, tokNormal, l.peekCustom('"')})
+			tr = append(tr, token{lineno, charno, tokString, l.peekCustom('"')})
 			charno += l.cursor - old
 		case '{':
 			old := l.cursor
@@ -79,7 +82,12 @@ func (l *lexer) lex() []token {
 			lineno++
 		default:
 			old := l.cursor
-			tr = append(tr, token{lineno, charno, tokNormal, l.peekTok()})
+			val := l.peekTok()
+			if _, err := strconv.Atoi(val); err == nil {
+				tr = append(tr, token{lineno, charno, tokNumber, val})
+			} else {
+				tr = append(tr, token{lineno, charno, tokKeyword, val})
+			}
 			charno += l.cursor - old
 		}
 		charno++
