@@ -12,16 +12,16 @@ func (tok *token) prettyPrint() {
 	fmt.Printf("value:    %s\n", tok.value)
 }
 
-func exprPrint(e expr) {
+func exprPrint(e expr, off string) {
 	switch e.(type) {
 	case *atom:
-		fmt.Printf("%v\n", e.(*atom))
+		fmt.Printf("%s%v\n", off, e.(*atom))
 	case *expression:
-		fmt.Print("[ ")
+		fmt.Println(off + "[")
 		for i:=0; i < len(e.(*expression).children); i++ {
-			exprPrint(e.(*expression).children[i])
+			exprPrint(e.(*expression).children[i], off + "  ")
 		}
-		fmt.Println(" ] ")
+		fmt.Println(off + "]")
 	}
 }
 
@@ -44,6 +44,5 @@ func main() {
 	}
 
 	res := p.parse()
-	fmt.Println(len(res.children))
-	exprPrint(&res)
+	exprPrint(&res, "")
 }
