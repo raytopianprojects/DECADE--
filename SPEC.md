@@ -43,7 +43,7 @@
 - [ADDTODO \`name\` value] is append to list
 - [FINISHTODO \`name\` index] is remove index from list
 
-#builtin functions
+# builtin functions
 - [!print text] prints text
 - [!timeleft] tells how much time is left in the Decade Jam
 
