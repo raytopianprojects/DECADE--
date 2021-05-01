@@ -16,6 +16,8 @@
 - Comments are { text enclosed in curly brackets } and are multiline
 - Entry point is a function with name `CREATEGAME`, params undecided
 
+# keywords
+
 - [DECADE \`name\` type value] is variable
 - [JAM name [ params ] [ body ] type] is function
 - [MOKKA value] is return
@@ -37,8 +39,13 @@
 - [JAMRUNNING value1 value2] is less than
 - [NOJAM value] is not
 - [BORROW code] imports code, if it's not code, segfault
-- builtin functions are [!print text], [!timeleft]
-- 
+- [CREATETODO \`name\` size] is list
+- [ADDTODO \`name\` value] is append to list
+- [FINISHTODO \`name\` index] is remove index from list
+
+#builtin functions
+- [!print text] prints text
+- [!timeleft] tells how much time is left in the Decade Jam
 
 # technical details
 
